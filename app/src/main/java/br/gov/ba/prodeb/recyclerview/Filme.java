@@ -29,6 +29,22 @@ public class Filme {
         return atores;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
+
+    public void setProdutor(String produtor) {
+        this.produtor = produtor;
+    }
+
+    public void setAtores(String atores) {
+        this.atores = atores;
+    }
+
     private String titulo;
     private String diretor;
     private String produtor;

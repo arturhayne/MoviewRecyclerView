@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Contract.View{
 
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         mUserActionsListener = new Presenter(this,this);
         iniciarViews();
     }
-
 
     /**
      * Iniciando a view
@@ -47,5 +47,16 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
         }else {
             this.progress_filme.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void showFilmes(List<Filme> filmesList) {
+        adapter.replaceData(filmesList);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mUserActionsListener.carregarFilmes();
     }
 }

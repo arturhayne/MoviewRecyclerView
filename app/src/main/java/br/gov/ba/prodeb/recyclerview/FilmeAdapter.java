@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
+
 /**
  * Created by artur.oliveira on 07/12/2017.
  */
@@ -64,6 +66,15 @@ public class FilmeAdapter extends RecyclerView.Adapter<FilmeAdapter.MyViewHolder
 
     public interface FilmeOnClick{
         void abrirListaFilme(Integer position);
+    }
+
+    public void replaceData(List<Filme> filmes) {
+        setList(filmes);
+        notifyDataSetChanged();
+    }
+
+    private void setList(List<Filme> filmes) {
+        mlista = checkNotNull(filmes);
     }
 
 
